@@ -1,0 +1,20 @@
+<%= @success_message %>
+
+<p><b>Song Name: </b><%= @song.name %></p>
+
+<p><b>Artist Name: </b><a href = "/artists/<%= @song.artist.slug %>"><%= @song.artist.name %></a></p>
+
+<p><b>Genres: </b>
+    <ul> 
+  <% @song.genres.each do |genre|%>
+    <a href= "/genres/<%=genre.slug%>">
+    <li><%= genre.name %></li></a>
+  <% end %>
+    </ul>
+</p>
+
+<a href="/songs/<%= @song.slug %>/edit">Edit Song</a>
+</br>
+
+<a href="/songs/<%= @song.slug %>/delete">Delete Song</a>
+</br>
